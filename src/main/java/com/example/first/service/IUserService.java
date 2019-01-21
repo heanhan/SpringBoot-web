@@ -27,4 +27,7 @@ public interface IUserService {
 	
 	//删除用户 根据用户id
 	public int deleteUserInfo(int id);
+	
+	//用户登录信息校验
+	public Users loginInfo(String usercode,String password);
 }

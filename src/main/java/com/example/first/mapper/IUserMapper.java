@@ -47,5 +47,16 @@ public interface IUserMapper {
 	// 删除用户 根据用户id
 	@Delete("delete from users where userid=#{userId}")
 	public int deleteUserInfo(int id);
+	
+	//用户登录信息
+	@Select("select * from users where usercode=#{usercode} and password=#{password}")
+	@Results({
+		@Result(property="userName", column="username" ),
+		@Result(property="nickName",column="nickname"),
+		@Result(property="logincount",column="logincount"),
+		@Result(property="loginDate",column="logindate"),
+		@Result(property="integrate",column="integrate")
+	})
+	public Users loginInfo(String username,String password);
 
 }

@@ -57,5 +57,11 @@ public class UserServiceImpl implements IUserService {
 	public int deleteUserInfo(int id) {
 		return 0;
 	}
+	
+	//用户登录信息
+	@Override
+	public Users loginInfo(String usercode, String password) {
+		return null;
+	}
 
 }
