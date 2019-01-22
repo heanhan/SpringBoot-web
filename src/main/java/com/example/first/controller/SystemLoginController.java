@@ -23,6 +23,7 @@ public class SystemLoginController {
 	public Users loginInfo(@RequestParam("username") String usercode,@RequestParam("password") String password) 
 	{
 		System.out.println("接收前台的用户信息："+usercode+";"+password);
+		Users userInfo=userServiceImpl.loginInfo(usercode, password);
 		return null;
 	}
 

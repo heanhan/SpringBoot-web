@@ -61,7 +61,7 @@ public class UserServiceImpl implements IUserService {
 	//用户登录信息
 	@Override
 	public Users loginInfo(String usercode, String password) {
-		return null;
+		return userMapper.loginInfo(usercode, password);
 	}
 
 }

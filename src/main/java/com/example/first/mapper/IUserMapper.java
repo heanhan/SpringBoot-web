@@ -49,7 +49,7 @@ public interface IUserMapper {
 	public int deleteUserInfo(int id);
 	
 	//用户登录信息
-	@Select("select * from users where usercode=#{usercode} and password=#{password}")
+	@Select("select * from users where usercode=#{param1} and userpwd=#{param2}")
 	@Results({
 		@Result(property="userName", column="username" ),
 		@Result(property="nickName",column="nickname"),
