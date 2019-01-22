@@ -14,6 +14,7 @@ public class Users implements Serializable{
 	private int loginCount;//登录次数
 	private Date loginDate;//上次登录时间
 	private int integrate;//积分
+	private String sessionId;//用户的session  id
 	private Date createDate;//创建日期
 	private Date updateDate;//更新日期
 	//无参构造函数
@@ -22,7 +23,7 @@ public class Users implements Serializable{
 	}
 	//重载构造方法
 	public Users(long userId, String userCode, String userName, String nickName, String userPwd, int loginCount,
-			Date loginDate, int integrate, Date createDate, Date updateDate) {
+			Date loginDate, int integrate, String sessionId,Date createDate, Date updateDate) {
 		super();
 		this.userId = userId;
 		this.userCode = userCode;
@@ -32,6 +33,7 @@ public class Users implements Serializable{
 		this.loginCount = loginCount;
 		this.loginDate = loginDate;
 		this.integrate = integrate;
+		this.sessionId=sessionId;
 		this.createDate = createDate;
 		this.updateDate = updateDate;
 	}
@@ -85,6 +87,14 @@ public class Users implements Serializable{
 	public void setIntegrate(int integrate) {
 		this.integrate = integrate;
 	}
+	public String getSessionId() 
+	{
+		return sessionId;
+	}
+	public void setSessionId(String sessionId) 
+	{
+		this.sessionId=sessionId;
+	}
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -100,13 +110,13 @@ public class Users implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
 	//重写toString()
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", userCode=" + userCode + ", userName=" + userName + ", nickName="
-				+ nickName + ", userPwd=" + userPwd + ", logincount=" + loginCount + ", loginDate=" + loginDate
-				+ ", integrate=" + integrate + ", createDate=" + createDate + ", updateDate=" + updateDate + "]";
+				+ nickName + ", userPwd=" + userPwd + ", loginCount=" + loginCount + ", loginDate=" + loginDate
+				+ ", integrate=" + integrate + ", sessionId=" + sessionId + ", createDate=" + createDate
+				+ ", updateDate=" + updateDate + "]";
 	}
 	
 }
