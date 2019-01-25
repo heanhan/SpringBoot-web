@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.first.pojo.Users;
 import com.example.first.service.IUserService;
 import com.example.first.utils.RedisUtil;
-
 @RestController
 public class UserController {
 	@Autowired

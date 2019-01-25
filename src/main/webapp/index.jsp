@@ -1,332 +1,361 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-	<title>个人博客主页</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>个人随记主业</title>
 
-	<!-- Bootstrap -->
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/index.css">
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/index.css">
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
-  </head>
-  <body>
+</head>
+<body>
 
-  	<!-- 右下角按钮 -->
-  	<!-- <button class="btn btn-default btn_right_bottom">写</button> -->
-  	<!-- 图片轮播 -->
-  	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  		<!-- Indicators -->
-  		<ol class="carousel-indicators">
-  			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-  			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-  			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-  			<li data-target="#carousel-example-generic" data-slide-to="4"></li>
-  			<li data-target="#carousel-example-generic" data-slide-to="5"></li>
-  		</ol>
+	<!-- 右下角按钮 -->
+	<!-- <button class="btn btn-default btn_right_bottom">写</button> -->
+	<!-- 图片轮播 -->
+	<div id="carousel-example-generic" class="carousel slide"
+		data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0"
+				class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+		</ol>
 
-  		<!-- Wrapper for slides -->
-  		<div class="carousel-inner" role="listbox">
-  			<div class="item active">
-  				<img src="bootstrap/img/ic_p4.jpg">
-  				<p class="carousel-caption">
-  					测试
-  				</p>
-  			</div>
-  			<div class="item">
-  				<img src="bootstrap/img/ic_p6.jpg">
-  				<p class="carousel-caption">
-  					测试
-  				</p>
-  			</div>
-  			<div class="item">
-  				<img src="bootstrap/img/ic_p7.jpg">
-  				<p class="carousel-caption">
-  					测试
-  				</p>
-  			</div>
-  			<div class="item">
-  				<img src="bootstrap/img/ic_p8.jpg">
-  				<p class="carousel-caption">
-  					测试
-  				</p>
-  			</div>
-  			<div class="item">
-  				<img src="bootstrap/img/ic_p9.jpg">
-  				<p class="carousel-caption">
-  					测试
-  				</p>
-  			</div>
-  		</div>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="bootstrap/img/ic_p4.jpg">
+				<p class="carousel-caption">测试</p>
+			</div>
+			<div class="item">
+				<img src="bootstrap/img/ic_p6.jpg">
+				<p class="carousel-caption">测试</p>
+			</div>
+			<div class="item">
+				<img src="bootstrap/img/ic_p7.jpg">
+				<p class="carousel-caption">测试</p>
+			</div>
+			<div class="item">
+				<img src="bootstrap/img/ic_p8.jpg">
+				<p class="carousel-caption">测试</p>
+			</div>
+			<div class="item">
+				<img src="bootstrap/img/ic_p9.jpg">
+				<p class="carousel-caption">测试</p>
+			</div>
+		</div>
 
-  		<!-- Controls -->
-  		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-  			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  			<span class="sr-only">Previous</span>
-  		</a>
-  		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-  			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  			<span class="sr-only">Next</span>
-  		</a>
-  	</div>
-  	<!-- 功能模块 -->
-  	<div class="row div_function">
-  		<div class="col-xs-4">
-  			<div class="panel panel-default" id="pFunc1">
-  				<div class="panel-body">
-  					<strong>生活随记</strong>
-  					<img class="iv_function" src="bootstrap/img/ic_store.svg">
-  				</div>
-  			</div>
-  		</div>
-  		<div class="col-xs-4">
-  			<div class="panel panel-default"  id="pFunc2">
-  				<div class="panel-body">
-  					<strong>技术分享</strong>
-  					<img class="iv_function" src="bootstrap/img/ic_remeber.svg">
-  				</div>
-  			</div>
-  		</div>
-  		<div class="col-xs-4">
-  			<div class="panel panel-default"  id="pFunc3">
-  				<div class="panel-body">
-  					<strong>生活纪念馆</strong>
-  					<img class="iv_function" src="bootstrap/img/ic_personal.svg">
-  				</div>
-  			</div>
-  		</div>
-  	</div>
-  	<!-- 技术日记 -->
-  	<div class="container div_divider">
-  		<!-- 分割线 -->
-  		<hr class="hr_1">Bigname Technology World !<hr class="hr_2">
-  		<div class="row">
-  			<!-- 文章列表 -->
-  			<div class="col-xs-9">
-  				<div class="list-group div_article">
-  					<!-- 子头栏 -->
-  					<a href="#" class="list-group-item active item_article_first">
-  						<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
-  						<h4 class="list-group-item-heading" align="center">
-  						我与昨晚去世，走时心如止水，我于今早重生，来时心怀暖阳！
-  						</h4>
-  					</a>
-  					<!-- 文章列表 -->
-  					<div class="list-group-item item_article">
-  						<div class="row">
-  							<div class="div_center col-xs-9">
-  								<div class="list-group-item-heading div_article_title">
-  									<strong>
-  										个人生活随记-20190121
-  									</strong>
-  								</div>
-  								<p class="list-group-item-text div_article_content">
-  									用文字记录生活感知，让平凡生活不在平凡。面对过往，感谢自己以前遇见的所有人和事，感谢那些在我困苦时给予我支持的人，感谢那些今生只有一面之缘的人儿。感谢你们曾路过我的世界，我想趁着余热将你们烙印在我生命深处。
-  								</p>
-  								<p><a class="btn btn-success pull-right" href="#" role="button" style="margin-bottom:10px;">查看更多 &raquo;</a></p>
-  							</div>
-  							<!-- 右侧图片，信息 -->
-  							<div class="col-xs-3 div_right_info">
-  								<img class="iv_article img-rounded" src="bootstrap/img/ic_android1.jpg">
-  								<div>2019/1/21 12:09</div>
-  							</div>
-  						</div>
-  					</div>
-  					<div class="list-group-item item_article">
-  						<div class="row">
-  							<div class="div_center col-xs-9">
-  								<div class="list-group-item-heading div_article_title">
-  									<strong>
-  										个人生活随记-20190121
-  									</strong>
-  								</div>
-  								<p class="list-group-item-text div_article_content">
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  								</p>
-  								<p><a class="btn btn-success pull-right" href="#" role="button" style="margin-bottom:10px;">查看更多 &raquo;</a></p>
-  							</div>
-  							<!-- 右侧图片，信息 -->
-  							<div class="col-xs-3 div_right_info">
-  								<img class="iv_article img-rounded" src="bootstrap/img/ic_android1.jpg">
-  								<div>2019/1/21 12:09</div>
-  							</div>
-  						</div>
-  					</div>
-  					<div class="list-group-item item_article">
-  						<div class="row">
-  							<div class="div_center col-xs-9">
-  								<div class="list-group-item-heading div_article_title">
-  									<strong>
-  										个人生活随记-20190121
-  									</strong>
-  								</div>
-  								<p class="list-group-item-text div_article_content">
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  								</p>
-  								<p><a class="btn btn-success pull-right" href="#" role="button" style="margin-bottom:10px;">查看更多 &raquo;</a></p>
-  							</div>
-  							<!-- 右侧图片，信息 -->
-  							<div class="col-xs-3 div_right_info">
-  								<img class="iv_article img-rounded" src="bootstrap/img/ic_android2.jpg">
-  								<div>2019/1/21 12:09</div>
-  							</div>
-  						</div>
-  					</div>
-  					<div class="list-group-item item_article">
-  						<div class="row">
-  							<div class="div_center col-xs-9">
-  								<div class="list-group-item-heading div_article_title">
-  									<strong>
-  										个人生活随记-20190121
-  									</strong>
-  								</div>
-  								<p class="list-group-item-text div_article_content">
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  									所有设计源于生活，框终点在于分层、层与层之间如何交流。
-  								</p>
-  								<p><a class="btn btn-success pull-right" href="#" role="button" style="margin-bottom:10px;">查看更多 &raquo;</a></p>
-  							</div>
-  							<!-- 右侧图片，信息 -->
-  							<div class="col-xs-3 div_right_info">
-  								<img class="iv_article img-rounded" src="bootstrap/img/ic_android3.jpg">
-  								<div>2019/1/21 12:09</div>
-  							</div>
-  						</div>
-  					</div>
-  					<!-- 底栏分页 -->
-  					<div class="list-group-item item_article">
-  						<div class="row">
-  							<div class="div_center col-xs-12">
-  								<div class="list-group-item-heading div_article_title">
-  									<nav aria-label="Page navigation"  style="text-align: center">
-									  <ul class="pagination">
-									    <li>
-									      <a href="#" aria-label="Previous">
-									        <span aria-hidden="true">&laquo;</span>
-									      </a>
-										    </li>
-										    <li><a href="#">首页</a></li>
-										    <li><a href="#">1</a></li>
-										    <li><a href="#">2</a></li>
-										    <li><a href="#">3</a></li>
-										    <li><a href="#">4</a></li>
-										    <li><a href="#">5</a></li>
-										    <li><a href="#">末页</a></li>
-										    <li>
-									      <a href="#" aria-label="Next">
-									        <span aria-hidden="true">&raquo;</span>
-									      </a>
-									    </li>
-									  </ul>
-									</nav>
-  								</div>
-  							</div>
-  						</div>
-  					</div>
-  				</div>
-  			</div>
-  			<!-- 右侧 -->
-  			<div class="col-xs-3 div_record">
-  				<!-- 用户信息 -->
-  				<div class="jumbotron div_userinfo">
-  					<img class="iv_user_head img-circle" src="bootstrap/img/ic_p5.jpg">
-  					<div style="display: inline-block; margin-left: 12px;font-size: 18px;">赵不能怂</div>
-  				</div>
-  				<!-- 随手记录 -->
-  				<div style="display: flex;">
-  					<div style="flex: 1"><hr></div>
-  					<div style="text-align: center;line-height: 48px;color: #34374C">记录美好的心情</div>
-  					<div style="flex: 1"><hr></div>
-  				</div>
-  				<input type="text" class="form-control" placeholder="标题:美好的一天...">
-  				<br>
-  				<textarea class="form-control" rows="3" name=textarea placeholder="内容:今天捡到一分钱！！！^_^"></textarea>
-  				<br>
-  				<div class="div_save">
-  					<button type="button" class="btn btn-primary btn_save_record">save</button>
-  				</div>
-  				<hr>
-  				<!-- 小功能列表 -->
-  				<div class="row div_little_func">
-  					<div class="col-xs-4">
-  						<button class="btn btn-default btn-cricle btn_login" data-toggle="modal" data-target="#loginModal">登</button>
-  					</div>
-  					<div class="col-xs-4">
-  						<button class="btn btn-default btn-cricle btn_stay">留</button>
-  					</div>
-  					<div class="col-xs-4">
-  						<button class="btn btn-default btn-cricle btn_write">写</button>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-  		<!-- 登录模态框 -->
-  		<div class="modal fade bs-example-modal-sm" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  			<div class="modal-dialog modal-sm" role="document">
-  			<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="exampleModalLabel" style="text-align: center;">用户登录</h4>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic"
+			role="button" data-slide="prev"> <span
+			class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="right carousel-control" href="#carousel-example-generic"
+			role="button" data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<!-- 功能模块 -->
+	<div class="row div_function">
+		<div class="col-xs-4">
+			<div class="panel panel-default" id="pFunc1">
+				<div class="panel-body">
+					<strong>生活随记</strong> <img class="iv_function"
+						src="bootstrap/img/ic_store.svg">
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="panel panel-default" id="pFunc2">
+				<div class="panel-body">
+					<strong>技术分享</strong> <img class="iv_function"
+						src="bootstrap/img/ic_remeber.svg">
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="panel panel-default" id="pFunc3">
+				<div class="panel-body">
+					<strong>生活纪念馆</strong> <img class="iv_function"
+						src="bootstrap/img/ic_personal.svg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 技术日记 -->
+	<div class="container div_divider">
+		<!-- 分割线 -->
+		<hr class="hr_1">
+		Bigname Technology World !
+		<hr class="hr_2">
+		<div class="row">
+			<!-- 文章列表 -->
+			<div class="col-xs-9">
+				<div class="list-group div_article">
+					<!-- 子头栏 -->
+					<a href="#" class="list-group-item active item_article_first">
+						<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+						<h4 class="list-group-item-heading" align="center">
+							我与昨晚去世，走时心如止水，我于今早重生，来时心怀暖阳！</h4>
+					</a>
+					<!-- 文章列表 -->
+					<div class="list-group-item item_article">
+						<div class="row">
+							<div class="div_center col-xs-9">
+								<div class="list-group-item-heading div_article_title">
+									<strong> 个人生活随记-20190121 </strong>
+								</div>
+								<p class="list-group-item-text div_article_content">
+									用文字记录生活感知，让平凡生活不在平凡。面对过往，感谢自己以前遇见的所有人和事，感谢那些在我困苦时给予我支持的人，感谢那些今生只有一面之缘的人儿。感谢你们曾路过我的世界，我想趁着余热将你们烙印在我生命深处。
+								</p>
+								<p>
+									<a class="btn btn-success pull-right" href="#" role="button"
+										style="margin-bottom: 10px;">查看更多 &raquo;</a>
+								</p>
+							</div>
+							<!-- 右侧图片，信息 -->
+							<div class="col-xs-3 div_right_info">
+								<img class="iv_article img-rounded"
+									src="bootstrap/img/ic_android1.jpg">
+								<div>2019/1/21 12:09</div>
+							</div>
+						</div>
 					</div>
-				   <form action="${pageContext.request.contextPath}/loginInfo" method="post">
-					<div class="modal-body">
+					<div class="list-group-item item_article">
+						<div class="row">
+							<div class="div_center col-xs-9">
+								<div class="list-group-item-heading div_article_title">
+									<strong> 个人生活随记-20190121 </strong>
+								</div>
+								<p class="list-group-item-text div_article_content">
+									所有设计源于生活，框终点在于分层、层与层之间如何交流。 所有设计源于生活，框终点在于分层、层与层之间如何交流。
+									所有设计源于生活，框终点在于分层、层与层之间如何交流。</p>
+								<p>
+									<a class="btn btn-success pull-right" href="#" role="button"
+										style="margin-bottom: 10px;">查看更多 &raquo;</a>
+								</p>
+							</div>
+							<!-- 右侧图片，信息 -->
+							<div class="col-xs-3 div_right_info">
+								<img class="iv_article img-rounded"
+									src="bootstrap/img/ic_android1.jpg">
+								<div>2019/1/21 12:09</div>
+							</div>
+						</div>
+					</div>
+					<div class="list-group-item item_article">
+						<div class="row">
+							<div class="div_center col-xs-9">
+								<div class="list-group-item-heading div_article_title">
+									<strong> 个人生活随记-20190121 </strong>
+								</div>
+								<p class="list-group-item-text div_article_content">
+									所有设计源于生活，框终点在于分层、层与层之间如何交流。 所有设计源于生活，框终点在于分层、层与层之间如何交流。
+									所有设计源于生活，框终点在于分层、层与层之间如何交流。 所有设计源于生活，框终点在于分层、层与层之间如何交流。
+									所有设计源于生活，框终点在于分层、层与层之间如何交流。</p>
+								<p>
+									<a class="btn btn-success pull-right" href="#" role="button"
+										style="margin-bottom: 10px;">查看更多 &raquo;</a>
+								</p>
+							</div>
+							<!-- 右侧图片，信息 -->
+							<div class="col-xs-3 div_right_info">
+								<img class="iv_article img-rounded"
+									src="bootstrap/img/ic_android2.jpg">
+								<div>2019/1/21 12:09</div>
+							</div>
+						</div>
+					</div>
+					<div class="list-group-item item_article">
+						<div class="row">
+							<div class="div_center col-xs-9">
+								<div class="list-group-item-heading div_article_title">
+									<strong> 个人生活随记-20190121 </strong>
+								</div>
+								<p class="list-group-item-text div_article_content">
+									所有设计源于生活，框终点在于分层、层与层之间如何交流。 所有设计源于生活，框终点在于分层、层与层之间如何交流。
+									所有设计源于生活，框终点在于分层、层与层之间如何交流。 所有设计源于生活，框终点在于分层、层与层之间如何交流。</p>
+								<p>
+									<a class="btn btn-success pull-right" href="#" role="button"
+										style="margin-bottom: 10px;">查看更多 &raquo;</a>
+								</p>
+							</div>
+							<!-- 右侧图片，信息 -->
+							<div class="col-xs-3 div_right_info">
+								<img class="iv_article img-rounded"
+									src="bootstrap/img/ic_android3.jpg">
+								<div>2019/1/21 12:09</div>
+							</div>
+						</div>
+					</div>
+					<!-- 底栏分页 -->
+					<div class="list-group-item item_article">
+						<div class="row">
+							<div class="div_center col-xs-12">
+								<div class="list-group-item-heading div_article_title">
+									<nav aria-label="Page navigation" style="text-align: center">
+										<ul class="pagination">
+											<li><a href="#" aria-label="Previous"> <span
+													aria-hidden="true">&laquo;</span>
+											</a></li>
+											<li><a href="#">首页</a></li>
+											<li><a href="#">1</a></li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li><a href="#">4</a></li>
+											<li><a href="#">5</a></li>
+											<li><a href="#">末页</a></li>
+											<li><a href="#" aria-label="Next"> <span
+													aria-hidden="true">&raquo;</span>
+											</a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 右侧 -->
+			<div class="col-xs-3 div_record">
+				<!-- 用户信息 -->
+				<div class="jumbotron div_userinfo">
+					<img class="iv_user_head img-circle" src="bootstrap/img/ic_p5.jpg">
+					<div
+						style="display: inline-block; margin-left: 12px; font-size: 18px;">赵不能怂</div>
+				</div>
+				<!-- 随手记录 -->
+				<div style="display: flex;">
+					<div style="flex: 1">
+						<hr>
+					</div>
+					<div style="text-align: center; line-height: 48px; color: #34374C">记录美好的心情</div>
+					<div style="flex: 1">
+						<hr>
+					</div>
+				</div>
+				<input type="text" class="form-control" placeholder="标题:美好的一天...">
+				<br>
+				<textarea class="form-control" rows="3" name=textarea
+					placeholder="内容:今天捡到一分钱！！！^_^"></textarea>
+				<br>
+				<div class="div_save">
+					<button type="button" class="btn btn-primary btn_save_record">save</button>
+				</div>
+				<hr>
+				<!-- 小功能列表 -->
+				<div class="row div_little_func">
+					<div class="col-xs-4">
+						<button class="btn btn-default btn-cricle btn_login"
+							data-toggle="modal" data-target="#loginModal">登</button>
+					</div>
+					<div class="col-xs-4">
+						<button class="btn btn-default btn-cricle btn_stay">留</button>
+					</div>
+					<div class="col-xs-4">
+					    <button type="button" class="btn btn-default btn-cricle btn_write" data-toggle="modal" data-target="#myModal">写 </button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 登录模态框 -->
+		<div class="modal fade bs-example-modal-sm" id="loginModal"
+			tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="exampleModalLabel"
+							style="text-align: center;">用户登录</h4>
+					</div>
+					<form action="${pageContext.request.contextPath}/loginInfo"
+						method="post">
+						<div class="modal-body">
 							<div class="form-group">
-								<label for="recipient-name" class="control-label">用户名:</label>
-								<input type="text" class="form-control" id="username" name="username" values="赵某人">
+								<label for="recipient-name" class="control-label">用户名:</label> <input
+									type="text" class="form-control" id="username" name="username"
+									values="赵某人">
 							</div>
 							<div class="form-group">
-								<label for="message-text" class="control-label" >密码:</label>
-								<input type="password" class="form-control" id="password" name="password" values="123456">
+								<label for="message-text" class="control-label">密码:</label> <input
+									type="password" class="form-control" id="password"
+									name="password" values="123456">
 							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary"
+								data-dismiss="modal">关闭</button>
+							<button type="submit" class="btn btn-success">登录</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 写文章模块 -->
+		<!-- 写文章的Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true"> 
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true" id="hiddenclose">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel" align="center">技术分享</h4>
+					</div>
+					<div class="modal-body" style="height: 300px;width:auto;">
+						
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
-						<button type="submit" class="btn btn-success">登录</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary">保存</button>
 					</div>
-				</form>
 				</div>
-  			</div>
-  		</div>
-  		<footer>
-				<p align="center">&copy; 2018-12-2 Company, Inc.</p>
+			</div>
+		</div>
+		<footer>
+			<p align="center">&copy; 2018-12-2 Company, Inc.</p>
 		</footer>
-  	</div>
+	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  	<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
-  	<!-- Include all compiled plugins (below), or include individual files as needed -->
-  	<script src="bootstrap/js/bootstrap.min.js"></script>
-  	<script src="bootstrap/js/init.js" type="text/script"></script>
-  	<script src="bootstrap/js/util.js"></script>
-  	<div>
+	<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/init.js" type="text/script"></script>
+	<script src="bootstrap/js/util.js"></script>
+	<div>
 		<div class="main_nav_bottom">
 			<nav class="navbar navbar-default navbar-fixed-bottom">
 				<div class="container" align="center">
 					<style>
-					.nav-tabs {
-						text-align: center;
-						height: 40px;
-						line-height: 40px;
-					}
+						.nav-tabs {
+							text-align: center;
+							height: 40px;
+							line-height: 40px;
+						}
 					</style>
 					<ul class="nav nav-tabs nav-tabs-justified">
 						<div class="row" align="center">
@@ -345,5 +374,11 @@
 			</nav>
 		</div>
 	</div>
-  </body>
-  </html>
+</body>
+<script type="text/javascript">
+$("#hiddenclose").bind("click",function(){
+	
+	alert("关闭当前窗口，可能会造成未保存的内容丢失！");
+});
+</script>
+</html>

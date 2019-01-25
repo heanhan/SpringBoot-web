@@ -1,7 +1,5 @@
 package com.example.first.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,8 +24,12 @@ public class SystemLoginController {
 	{
 		System.out.println("接收前台的用户信息："+usercode+";"+password+";"+remember);
 		Users userInfo=userServiceImpl.loginInfo(usercode, password);
-//		HttpServletRequest request = null;
-//		request.setAttribute("userInfo", userInfo);
+		if(userInfo!=null||!userInfo.equals("")) 
+		{
+			
+		}else {
+			
+		}
 		ModelAndView mv = new ModelAndView("index.jsp");
 		return mv;
 	}
