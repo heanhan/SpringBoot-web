@@ -7,12 +7,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-<title>个人随记主业</title>
+<title>个人随记</title>
 
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="bootstrap/css/index.css">
-
+<link rel="stylesheet" href="bootstrap/css/bootstrap-markdown.min.css"
+	type="text/css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -271,7 +272,8 @@
 						<button class="btn btn-default btn-cricle btn_stay">留</button>
 					</div>
 					<div class="col-xs-4">
-					    <button type="button" class="btn btn-default btn-cricle btn_write" data-toggle="modal" data-target="#myModal">写 </button>
+						<button type="button" class="btn btn-default btn-cricle btn_write"
+							data-toggle="modal" data-target="#myModal">写</button>
 					</div>
 				</div>
 			</div>
@@ -315,7 +317,8 @@
 		<!-- 写文章模块 -->
 		<!-- 写文章的Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true"> 
+			aria-labelledby="myModalLabel" data-backdrop="static"
+			aria-hidden="true">
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -325,13 +328,27 @@
 						</button>
 						<h4 class="modal-title" id="myModalLabel" align="center">技术分享</h4>
 					</div>
-					<div class="modal-body" style="height: 300px;width:auto;">
-						
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-						<button type="button" class="btn btn-primary">保存</button>
-					</div>
+					<form class="form-horizontal" action="${pageContext.request.contextPath}/addArticle" method="post">
+						<div class="modal-body" style="height: 300px; width: auto;">
+							<div class="form-group">
+							    <label for="title" class="col-sm-2 control-label">文章标题</label>
+							    <div class="col-sm-10">
+							      <input type="test" class="form-control" id="title" name="title" placeholder="文章标题">
+							    </div>
+							    <div style="display:none;" name="clssify" value="1"></div> 
+							  </div>
+							  <div class="form-group">
+							    <div class="col-sm-12">
+									<textarea id="some-textarea" name="content" data-provide="markdown-editable" rows="10"></textarea>
+							    </div>
+							  </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							<button type="button" class="btn btn-primary" id="myButton" data-loading-text="保存中... "  autocomplete="off">
+							提交</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -346,17 +363,20 @@
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="bootstrap/js/init.js" type="text/script"></script>
 	<script src="bootstrap/js/util.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-markdown.js"></script>
+	<script type="text/javascript"
+		src="bootstrap/locale/bootstrap-markdown.zh.js"></script>
 	<div>
 		<div class="main_nav_bottom">
 			<nav class="navbar navbar-default navbar-fixed-bottom">
 				<div class="container" align="center">
 					<style>
-						.nav-tabs {
-							text-align: center;
-							height: 40px;
-							line-height: 40px;
-						}
-					</style>
+.nav-tabs {
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+</style>
 					<ul class="nav nav-tabs nav-tabs-justified">
 						<div class="row" align="center">
 							<div class="col-md-4 col-sm-4 col-xs-4" align="center">
@@ -376,9 +396,45 @@
 	</div>
 </body>
 <script type="text/javascript">
-$("#hiddenclose").bind("click",function(){
+	//关闭窗口告警
+	$("#hiddenclose").bind("click", function() {
+		alert("关闭当前窗口，可能会造成未保存的内容丢失！");
+	});
+	//保存文章
+	$('#myButton').bind('click', function () {
+	    var btn = $(this).button('loading')
+	    // business logic...
+	    $.ajax({
+	    			type:"POST",
+	    			url:"${pageContext.request.contextPath}/addArticle",
+	    			datatype:"json",
+	    			data:{
+	    				"title":"test title !",
+	    				"content":"test conten !",
+	    				"classify":"1",
+	    			},
+	    			success:function(result)
+	    			{
+	    				if(result.success)
+	    				{
+	    					alert("OK!");
+	    					$("#myModal").modal('hide');
+	    				}else
+	    				{
+	    					alert("failed");
+	    					$("#myModal").modal('hide');
+	    				}
+	    			}
+	    		});
+	    btn.button('reset');
+	  });
 	
-	alert("关闭当前窗口，可能会造成未保存的内容丢失！");
-});
+</script>
+<script type="text/javascript">
+	$(function() {
+		$("#some-textarea").markdown({
+			language : 'fr'
+		})
+	})
 </script>
 </html>
