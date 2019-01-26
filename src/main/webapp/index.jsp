@@ -402,16 +402,19 @@
 	});
 	//保存文章
 	$('#myButton').bind('click', function () {
-	    var btn = $(this).button('loading')
+	    var btn = $(this).button('loading');
+	    var title=$("#title").val();
+	    var classify=$("#classify").val();
+	    var content=$("#some-textarea").val();
 	    // business logic...
 	    $.ajax({
 	    			type:"POST",
 	    			url:"${pageContext.request.contextPath}/addArticle",
 	    			datatype:"json",
 	    			data:{
-	    				"title":"test title !",
-	    				"content":"test conten !",
-	    				"classify":"1",
+	    				"title":title,
+	    				"content":content,
+	    				"classify":classify,
 	    			},
 	    			success:function(result)
 	    			{
