@@ -243,24 +243,24 @@
 					<div
 						style="display: inline-block; margin-left: 12px; font-size: 18px;">赵不能怂</div>
 				</div>
-				<!-- 随手记录 -->
-				<div style="display: flex;">
-					<div style="flex: 1">
-						<hr>
+					<!-- 随手记录 -->
+					<div style="display: flex;">
+						<div style="flex: 1">
+							<hr>
+						</div>
+						<div style="text-align: center; line-height: 48px; color: #34374C">记录美好的心情</div>
+						<div style="flex: 1">
+							<hr>
+						</div>
 					</div>
-					<div style="text-align: center; line-height: 48px; color: #34374C">记录美好的心情</div>
-					<div style="flex: 1">
-						<hr>
+					<input type="text" class="form-control" id="diary-title" name="diary-title" placeholder="标题:美好的一天...">
+					<br>
+					<textarea class="form-control" rows="3" 
+						id="diary-content" name="diary-content" placeholder="内容:今天捡到一分钱！！！^_^"></textarea>
+					<br>
+					<div class="div_save">
+						<button type="button" class="btn btn-primary btn_save_record" id="save-diary">save</button>
 					</div>
-				</div>
-				<input type="text" class="form-control" placeholder="标题:美好的一天...">
-				<br>
-				<textarea class="form-control" rows="3" name=textarea
-					placeholder="内容:今天捡到一分钱！！！^_^"></textarea>
-				<br>
-				<div class="div_save">
-					<button type="button" class="btn btn-primary btn_save_record">save</button>
-				</div>
 				<hr>
 				<!-- 小功能列表 -->
 				<div class="row div_little_func">
@@ -335,7 +335,10 @@
 							    <div class="col-sm-10">
 							      <input type="test" class="form-control" id="title" name="title" placeholder="文章标题">
 							    </div>
-							    <div style="display:none;" name="clssify" value="1"></div> 
+							    <!-- classify=2  代表技术贴 -->
+							    <div style="display:none;">
+							    	<input type="text" id="classify" name="classify" value="2">
+							    </div> 
 							  </div>
 							  <div class="form-group">
 							    <div class="col-sm-12">
@@ -396,6 +399,13 @@
 	</div>
 </body>
 <script type="text/javascript">
+	//页面加载完成时 初始化markdown 编辑器
+	$(function() {
+		$("#some-textarea").markdown({
+			language : 'fr'
+		})
+	})
+	
 	//关闭窗口告警
 	$("#hiddenclose").bind("click", function() {
 		alert("关闭当前窗口，可能会造成未保存的内容丢失！");
@@ -408,36 +418,64 @@
 	    var content=$("#some-textarea").val();
 	    // business logic...
 	    $.ajax({
-	    			type:"POST",
-	    			url:"${pageContext.request.contextPath}/addArticle",
-	    			datatype:"json",
-	    			data:{
-	    				"title":title,
-	    				"content":content,
-	    				"classify":classify,
-	    			},
-	    			success:function(result)
-	    			{
-	    				if(result.success)
-	    				{
-	    					alert("OK!");
-	    					$("#myModal").modal('hide');
-	    				}else
-	    				{
-	    					alert("failed");
-	    					$("#myModal").modal('hide');
-	    				}
-	    			}
-	    		});
+    			type:"POST",
+    			url:"${pageContext.request.contextPath}/addArticle",
+    			datatype:"json",
+    			data:{
+    				"title":title,
+    				"content":content,
+    				"classify":classify,
+    			},
+    			success:function(result)
+    			{
+    				console.log(result)
+    				if(result=="success")
+    				{
+    					alert("保存成功!");
+    					$("#myModal").modal('hide');
+    				}else
+    				{
+    					alert("保存失败！");
+    					$("#myModal").modal('hide');
+    				}
+    				
+    				var title=$("#title").reset();
+    			    var classify=$("#classify").reset();
+    			    var content=$("#some-textarea").reset();
+    			}
+    		});
 	    btn.button('reset');
 	  });
-	
-</script>
-<script type="text/javascript">
-	$(function() {
-		$("#some-textarea").markdown({
-			language : 'fr'
-		})
-	})
+	//ajax 随记
+	$("#save-diary").bind('click', function()
+		{
+			alert("OK!");
+			var diaryTitle=$("#diary-title").val();
+			var diaryClassify=$("#diary-classify").val();
+			var diaryContent=$("#diary-content").val();
+			$.ajax({
+				type:"POST",
+				url:"${pageContext.request.contextPath}/addDiary",
+				datatype:"json",
+				data:{
+    				"title":diaryTitle,
+    				"cassify":diaryClassify,
+    				"content":diaryContent,
+    			},
+    			success:function(result){
+    				if(result=="success")
+    				{
+    					console.log(result)
+    					alert("OK!");
+    				}else
+    				{
+    					alert("failed");
+    				}
+    				$("#diary-title").reset();
+					$("#diary-classify").reset();
+					$("#diary-content").reset();
+    			}
+			});
+		});
 </script>
 </html>

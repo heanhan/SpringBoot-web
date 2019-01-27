@@ -11,6 +11,7 @@ public class Users implements Serializable{
 	private String userName;//姓名
 	private String nickName;//昵称
 	private String userPwd;//密码
+	private String motto;
 	private int loginCount;//登录次数
 	private Date loginDate;//上次登录时间
 	private int integrate;//积分
@@ -23,13 +24,14 @@ public class Users implements Serializable{
 	}
 	//重载构造方法
 	public Users(long userId, String userCode, String userName, String nickName, String userPwd, int loginCount,
-			Date loginDate, int integrate, String sessionId,Date createDate, Date updateDate) {
+			String motto,Date loginDate, int integrate, String sessionId,Date createDate, Date updateDate) {
 		super();
 		this.userId = userId;
 		this.userCode = userCode;
 		this.userName = userName;
 		this.nickName = nickName;
 		this.userPwd = userPwd;
+		this.motto=motto;
 		this.loginCount = loginCount;
 		this.loginDate = loginDate;
 		this.integrate = integrate;
@@ -68,6 +70,13 @@ public class Users implements Serializable{
 	}
 	public void setUserPwd(String userPwd) {
 		this.userPwd = userPwd;
+	}
+	
+	public String getMotto() {
+		return motto;
+	}
+	public void setMotto(String motto) {
+		this.motto = motto;
 	}
 	public int getLoginCount() {
 		return loginCount;
@@ -114,9 +123,10 @@ public class Users implements Serializable{
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", userCode=" + userCode + ", userName=" + userName + ", nickName="
-				+ nickName + ", userPwd=" + userPwd + ", loginCount=" + loginCount + ", loginDate=" + loginDate
-				+ ", integrate=" + integrate + ", sessionId=" + sessionId + ", createDate=" + createDate
+				+ nickName + ", userPwd=" + userPwd + ", motto=" + motto + ", loginCount=" + loginCount + ", loginDate="
+				+ loginDate + ", integrate=" + integrate + ", sessionId=" + sessionId + ", createDate=" + createDate
 				+ ", updateDate=" + updateDate + "]";
 	}
+	
 	
 }
