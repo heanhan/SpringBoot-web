@@ -1,0 +1,31 @@
+package com.example.first.intceptor;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import com.example.first.pojo.Const;
+
+/**
+ * @author Thunisoft
+ *
+ */
+public class LoginInterceptor extends HandlerInterceptorAdapter{
+
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		String path=request.getServletPath();
+		System.out.println("获取的路径："+path);
+		if (path.matches(Const.NO_INTERCEPTOR_PATH)) {
+        	//不需要的拦截直接过
+            return true;
+        } else {
+        	// 这写你拦截需要干的事儿，比如取缓存，SESSION，权限判断等
+            System.out.println("====================================");
+            response.sendRedirect(request.getContextPath()+"/login.jsp");
+            return false;
+        }
+	}
+}
