@@ -264,19 +264,23 @@
 				<hr>
 				<!-- 小功能列表 -->
 				<div class="row div_little_func">
-					<div class="col-xs-4">
-						<button class="btn btn-default btn-cricle btn_login"
+					<div class="col-xs-3">
+						<button class="btn btn-primary btn-cricle btn_login"
 							data-toggle="modal" data-target="#loginModal">登</button>
 					</div>
-					<div class="col-xs-4">
-						<button class="btn btn-default btn-cricle btn_stay">留</button>
-					</div>
-					<div class="col-xs-4">
-						<button type="button" class="btn btn-default btn-cricle btn_write"
+					<div class="col-xs-3">
+						<button type="button" class="btn btn-success btn-cricle "
 							data-toggle="modal" data-target="#myModal">写</button>
+					</div>
+					<div class="col-xs-3">
+						<button class="btn btn-info btn-cricle ">留</button>
+					</div>
+					<div class="col-xs-3">
+						<button class="btn btn-danger btn-cricle ">退</button>
 					</div>
 				</div>
 			</div>
+			<!-- 右下小功能区 -->
 		</div>
 		<!-- 登录模态框 -->
 		<div class="modal fade bs-example-modal-sm" id="loginModal"
